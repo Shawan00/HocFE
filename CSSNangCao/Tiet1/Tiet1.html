@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Nâng cao T1</title>
+    </head>
+
+    <body>
+
+        <h2>Float và clear</h2>
+        <style>
+        .element {
+            border: solid 2px;
+            border-color: red;
+            text-align: center;
+            font-size: larger;
+        }
+        .element-a {
+            background-color: yellow;
+            height: 100px;
+            border: solid 2px black;
+        }
+        .element-b {
+            background-color: rgb(93, 158, 93);
+            height: 200px;
+            border: solid 2px black
+        }
+        .element-c {
+            background-color: rgb(112, 112, 207);
+            height: 230px;
+            border: solid 2px black
+        }
+        .element-a {
+            /* co phần tử a sang trái */
+            float:left;
+        }
+        .element-b {
+            /* co phần tử b sang phải */
+            float:right;
+        }
+        .element-c {
+            /* ngăn chặn phần tử c chiếm dụng vị trí của phần tử b nếu phần tử b có thuộc tính float:right */
+            clear:right;
+        }
+        .element-c{
+            /* ngăn chặn phần tử c chiếm dụng vị trí của cả a và b */
+            clear:both;
+        }
+        </style>
+
+        <div class="element">
+            <div class="element-a">Element a</div>
+            <div class="element-b">Element b</div>
+            <div class="element-c">Element c</div>
+        </div>
+
+        <h2>Attribute selector</h2>
+        <style>
+        /* Chọn thẻ a có thuộc tính target */
+        a[target] { 
+            color: black;
+            font-size: 30px;
+        }
+        /* Chọn thẻ a có thuộc tính title = select */
+        a[title="select"] {
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }  
+        </style>
+
+        <a href target="_blank" title="select">Link 1</a>
+        <a href target>Link 2</a>
+        <a href title="None">Link 3</a>
+
+        <h2>Đơn vị</h2>
+        <ul>
+            <li>%: giá trị tương đối so với phần tử cha</li>
+            <li>rem: giá trị tương đối so với font-size của phần tử gốc</li>
+            <li>em: 1em = font-size của phần tử cha</li>
+            <li>1vw = 1% chiều rộng cửa sổ trình duyệt</li>
+            <li>1vh = 1% chiều cao cửa số trình duyệt</li>
+        </ul>
+
+        <h2>Hàm toán học</h2>
+        <ul>
+            <li>calc():tính toán giá trị cho thuộc tính</li>
+            <li>max(): lấy giá trị lớn nhất</li>
+            <li>min(): lấy giá trị nhỏ nhất</li>
+        </ul>
+        <style>
+            #mathFunction {                
+                background-color: orange;
+                width: calc(30vw - 10px);
+                height: max(30vh, 300px);
+            }
+        </style>
+        <div id="mathFunction"></div>
+
+        <h2>Biến</h2>
+        <style>
+            /* Cách tạo biến */
+            :root{
+                --gray: #333333;
+                --white: #ffffff;
+                --orange: #ffa500;
+            }
+
+            /* Cách sử dụng */
+            #mathFunction{
+                background-color: var(--orange);
+            }
+
+        </style>
+
+    </body>
+
+</html>
