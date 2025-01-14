@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Cơ bản Phần 1</title>
+</head>
+<body>
+    
+    <script>
+
+        // Biến và toán tử
+        var a = 10; //biến kiểu số nguyên
+        var b = 10.5; //biến kiểu số thực
+        var c = "10"; // biến kiểu chuỗi
+
+        console.log(a + b); // in ra số 20.5
+        console.log(a + c); // in ra chuỗi 1010
+        console.log(a - c); // in ra số 0
+
+        console.log(a == c); //in ra true
+        console.log(a === c); //in ra false
+        console.log(a != c); // in ra false
+        console.log(a !== c); // in ra true
+
+
+        // Hàm
+        function sum (a, b) {
+            alert(`Tổng a + b là ${a + b}`);
+        }
+        // sum(10, 12); // in ra 22
+
+
+        // Hàm built-in
+        setTimeout(function() {
+            console.log('Sau 5 giây hàm này sẽ được gọi');
+        }, 5000);
+
+        setInterval(function() {
+            console.log("Hàm gọi mỗi 10s");
+        }, 10000);
+
+        // Object
+        var student = {
+            name: "An Quoc Viet",
+            dob: "09-01-2003",
+            gpa: 2.6
+        }
+        console.log(student);
+        console.log(student.name);
+
+        //array
+        var num = [10, 20, 34, 89];
+        console.log(num);
+
+        console.log(num.push(12, 20)); //thêm 2 số vào cuối mảng và in ra số phần tử trong mảng
+        console.log(num.pop()); //in ra phần tử cuối cùng của mảng và xoá nó
+
+        console.log(num.shift()); //in ra phần tử ở đầu mảng và xoá nó
+        console.log(num.unshift(13, 9, 22)); // thêm vào đầu mảng các phần tử và in ra số phần tử trong mảng
+
+        var numStr = num.join(); //gộp mảng thành chuỗi số cách nhau bởi dấu phẩy
+        console.log(numStr);
+        console.log(num.join(", ")); //gộp thành chuỗi số cách nhau bởi ", "
+
+        var numArr = numStr.split(","); //tách từ phân tách bởi dấu phẩy
+        console.log(numArr);
+
+    </script>
+
+</body>
+</html>
