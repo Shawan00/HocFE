@@ -29,7 +29,7 @@ header .inner-logo {
 }
 
 header .inner-logo a img {
-    height:50px;
+    height: 50px;
     width: auto;
     margin-right: 12px;
 }
@@ -45,7 +45,7 @@ header .inner-menu ul {
     display: flex;
 }
 
-header .inner-menu ul li a{
+header .inner-menu ul li a {
     font-family: var(--font);
     font-size: 1.1rem;
     color: var(--color-1);
@@ -62,7 +62,7 @@ header .inner-social ul {
     display: flex;
 }
 
-header .inner-social ul li a{
+header .inner-social ul li a {
     font-size: 1.5rem;
     color: var(--color-1);
     padding: 0 10px;
@@ -81,6 +81,7 @@ header .inner-social ul li a{
 
 .section-1 .content .title {
     width: 35%;
+    padding-bottom: 50px;
 }
 
 .section-1 .content .title h1 {
@@ -279,7 +280,7 @@ header .inner-social ul li a{
 .section-3 .width-content .slogan {
     display: flex;
     justify-content: space-around;
-    color: var(--color-1);    
+    color: var(--color-1);
 }
 
 .section-3 .width-content .slogan .item .text-wrapper {
@@ -312,6 +313,11 @@ header .inner-social ul li a{
     align-items: center;
 }
 
+.section-4 .content .text-wrapper {
+    width: 40%;
+    padding: 0 10px;
+}
+
 .section-4 .content .text-wrapper h3 {
     color: var(--color-1);
     font-size: 3.5rem;
@@ -341,9 +347,10 @@ header .inner-social ul li a{
     color: #ffc800;
 }
 
-.section-4 .content .image-wrapper{
+.section-4 .content .image-wrapper {
     width: 50%;
 }
+
 .section-4 .content .image-wrapper img {
     width: 100%;
     height: auto;
@@ -368,4 +375,147 @@ footer .main .width-content .text-wrapper {
 footer .copyright {
     font-size: 1.1rem;
     padding: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .width-content {
+        width: 95%
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .inner-menu {
+        display: none;
+    }
+
+    .inner-contact {
+        display: none;
+    }
+
+    .inner-social {
+        display: none;
+    }
+
+    .width-content {
+        max-width: 750px;
+    }
+
+    .inner-wrap::after {
+        content: "\f0c9";
+        font-family: "Font Awesome 5 Free";
+        font-size: 30px;
+        font-weight: 900;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .section-1 .content {
+        flex-direction: column-reverse;
+    }
+
+    .section-1 .content .title {
+        width: 60%;
+        align-self: self-start;
+    }
+
+    .section-2 .content {
+        flex-wrap: wrap;
+        height: 1000px;
+    }
+
+    .section-2 .content div {
+        width: 100%;
+    }
+
+    .section-2 .content div img {
+        object-fit: cover;
+    }
+
+    .section-3 .slogan {
+        flex-wrap: wrap;
+        height: 350px;
+        align-content: space-between;
+    }
+
+    .section-3 .item {
+        width: 50%;
+    }
+
+    footer .main .width-content {
+        flex-wrap: wrap;
+    }
+
+    footer .main .width-content .text-wrapper {
+        width: 50%;
+        padding: 10px 0;
+    }
+
+    .copyright {
+        text-align: center ;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .width-content {
+        max-width: 550px;
+    }
+
+    .section-1 .content {
+        justify-content: space-between;
+        align-content: space-around;
+    }
+
+    .section-1 .image {
+        width: 100%;
+    }
+
+    .section-1 .content .image img {
+        width: 550px;
+        height: auto;
+    }
+
+    .section-1 .content .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-1 .content .title .icon {
+        flex-direction: column;
+    }
+
+    .section-1 .content .title .icon .shield {
+        margin-bottom: 30px;
+    }
+
+    .section-3 .width-content .slogan {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 520px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-4 .content {
+        flex-direction: column-reverse;
+    }
+
+    .section-4 .content .image-wrapper {
+        width: 100%;
+    }
+
+    .section-4 .content .text-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer .main .width-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .main .width-content .text-wrapper {
+        text-align: center;
+    }
+
 }

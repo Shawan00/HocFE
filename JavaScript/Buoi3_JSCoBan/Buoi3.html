@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript cơ bản buổi 3</title>
+</head>
+<body>
+
+    <script>
+        // Hàm
+        function ham() { // khai báo theo cách này thì có thể gọi hàm trước khi khai báo hàm
+            console.log(arguments);
+        }
+        ham(12, "123sbc", true, null); // in ra các đối số truyền vào dưới dạng mảng
+
+        function ham() {
+            console.log("Nếu đặt trùng tên hàm thì sẽ gọi hàm được khai báo sau");
+        }
+        ham(123); // lời gọi hàm này và lời gọi hàm ở trên đều gọi tới hàm được khai báo sau
+
+        var tinhTong = function() { // khai báo theo cách này phải gọi hàm sau khi khai báo
+            let tong = 0;
+            for (x of arguments) {
+                tong += x;
+            }
+            return tong;
+        }
+        console.log(tinhTong(12, 34, 100));
+
+        //Hàm mũi tên
+        var arrowFunction = (a, b) => {
+            console.log(a + b);
+        }
+        arrowFunction(12, 24);
+
+        //Hàm mũi tên không có arguments nên phải sử dụng spread
+        const arrowFunc = (...args) => {
+            let tong = 0;
+            for (x of args) {
+                tong += x;
+            }
+            return tong;
+        }
+        console.log(arrowFunc(10, 11, 12));
+
+    </script>
+
+    <script>
+        // try catch 
+        var a = 10;
+        try {
+            console.log(a);
+        } catch (error) {
+            console.error();            
+        } finally {
+            console.log("luôn chạy vào đây");
+        }
+    </script>
+
+    <script>
+        // Object nâng cao
+
+        infoUser = {
+            email: "viet@123",
+            tuoi: 22
+        }
+        infoUser["dia-chi"] = "Ha noi";
+        console.log(infoUser);
+        
+        delete infoUser["dia-chi"]; //xoá key địa chỉ
+        console.log(infoUser);
+    </script>
+
+    <script>
+        // array nâng cao
+        numbers = [1,2,3,4,5,6,7,8,9];
+
+        // forEach
+        let tong = 0;
+        numbers.forEach(function(item, index, array) {
+            // console.log(item, index, array);
+            tong += item;
+            // numbers[index] = 10;
+        });
+        console.log(tong, numbers);
+
+        // every() dùng để kiểm tra một điều kiện áp dụng cho tất cả phần tử trong mảng
+        var check = numbers.every(function(item) {
+            return item <= 7;
+        });
+        console.log(check); // in ra false vì trong mảng có 8, 9 ko thoả mãn <= 7
+
+        // some() kiểm tra chỉ cần một phần tử của mảng thoả mãn điều kiện
+        check = numbers.some(function(item) {
+            return item == 9;
+        });
+        console.log (check); //in ra true vì có 1 phần tử là 9
+
+        // map() trả về một mảng mới
+        let newNumbers = numbers.map(function(item) {
+            return item + 2;
+        });
+        console.log(newNumbers); // cộng tất cả phần tử thêm 2
+    </script>
+    
+</body>
+</html>

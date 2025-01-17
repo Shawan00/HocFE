@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript cơ bản buổi 2</title>
+</head>
+<body>
+    
+    <script>
+        // Lệnh rẽ nhánh
+        var diem = prompt("Nhập điểm của bạn:");
+        if (diem >= 8) {
+            console.log("Học sinh giỏi");
+        } else if (diem >= 5) {
+            console.log("Học sinh khá");
+        } else if (diem >= 0) {
+            console.log("Học sinh yếu");
+        } else {
+            console.log("Nhập lỗi, vui lòng nhập lại");
+        }
+
+        // Vòng lặp for
+        for (let i = 0; i < 5; i++) {
+            console.log(`Đây là vòng lặp với i = ${i}`);
+        }
+
+        // vòng lặp for in
+        var arr = [0, 3, 5, 12, 9];
+        let result1 = "";
+        for (let x in arr) {
+            result1 += x + ", "; // in ra 0, 1, 2, 3, 4
+        }
+        console.log(result1);
+
+        //vòng lặp for of
+        var result2 = "";
+        for (let x of arr) {
+            result2 += x + ", "; // in ra các phẩn tử trong mảng arr
+        }
+        console.log(result2);
+
+        // vòng lặp while
+        var num = 89475;
+        var sumDigits = 0;
+        while (num > 0) {
+            sumDigits += num % 10;
+            num = Math.floor(num / 10) ;
+        }
+        console.log(sumDigits);
+
+        // continue
+        result3 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i == 3) continue;
+            result3 += i;
+        }
+        console.log(result3); // in ra 012456789
+
+        //break
+        result4 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i == 3) break;
+            result4 += i;
+        }
+        console.log(result4); //in ra 012
+
+
+    </script>
+</body>
+</html>
