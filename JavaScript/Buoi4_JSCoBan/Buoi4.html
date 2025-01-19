@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript cơ bản buổi 4</title>
+</head>
+<body>
+
+    <button onclick="openWindow()">Mở cửa sổ mới</button>
+    <button onclick="reloadTab()">Tải lại trang</button>
+
+    <script>
+
+        // BOM Window
+        console.log(window);
+        function openWindow() {
+            window.open("http://127.0.0.1:5500/JavaScript/Buoi4_JSCoBan/window.html", "_blank", "width=1200, height=600, top=200, left=100");
+        }
+
+    </script>
+
+    <script>
+        //BOM location
+        console.log(window.location);
+        function reloadTab() {
+            window.location.reload();
+        }
+    </script>
+
+
+    <!-- Cookie -->
+    <button onclick="saveCookie()">Cookie</button>
+    <button onclick="updateInfo()">Sửa thông tin</button>
+    <button onclick="deleteInfo()">Xoá thông tin</button>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function saveCookie() {
+            document.cookie = "token=123iu9";
+            setCookie("Ten", "Viet", 2);
+        }
+
+        console.log(document.cookie); // in ra tất cả các cookie
+
+        // đổi cookie bằng cách ghi đè
+        function updateInfo() {
+            document.cookie = "Ten=Tung"; 
+        }
+
+        // xoá cookie bằng cách set ngày hết hạn về ngày trong quá khứ
+        function deleteInfo() {
+            document.cookie = "Ten=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        }
+    </script>
+</body>
+</html>
