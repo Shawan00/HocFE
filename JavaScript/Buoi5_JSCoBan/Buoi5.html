@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>DOM</h1>
+
+        <h2>1. DOM Element</h2>
+        <style>
+            .light {
+                background-color: lightblue;
+            }
+            .dark {
+                background-color: darkcyan;
+                color: white;
+            }
+        </style>
+
+        <p class="light" id="content">Front end with Tùng</p>
+        <div class="container">
+            <div class="content">
+                <p class="dark item-1">Thẻ p 01</p>
+                <p class="dark">Thẻ p 02</p>
+                <p>Thẻ p 03</p>
+                <p class="dark">Thẻ p 04</p>
+                <p>Thẻ p 05</p>
+            </div>
+        </div>
+
+        <script>
+            //tìm theo id
+            var content = document.getElementById("content"); //trả về một phần tử
+            content.classList.add("dark");
+
+            //tìm theo tên thẻ
+            var elementsByTagName = document.getElementsByTagName("p"); //trả về một mảng các thẻ p
+            console.log(elementsByTagName[1]);
+
+            //tìm theo tên lớp
+            var elementsByClassName = document.getElementsByClassName("dark"); //trả vể mảng các thẻ có class là dark
+            console.log(elementsByClassName[0]);
+
+            //tìm theo css selector
+            var selector = document.querySelector(".container .content .item-1"); //trả về phần tử đầu tiên theo css selector
+            console.log(selector);
+            var selectors = document.querySelectorAll(".container .content .dark"); //trả về mảng phần tử theo css selector
+            console.log(selectors);
+
+        </script>
+
+        <h2>2. DOM HTML</h2>
+        <div class="inner-html" id="item">Nội dung thẻ div</div>
+        <script>
+            var element = document.querySelector(".inner-html"); 
+            console.log(element.innerHTML);//lấy ra nội dung của thẻ div
+            element.innerHTML = "Nội dung thay đổi"; //thay đổi nội dung thẻ div
+
+            console.log(element.getAttribute("id")); //lấy giá trị của thuộc tính
+
+            element.setAttribute("id", "item-2"); //thay đổi giá trị của thuộc tính
+            console.log(element.getAttribute("id"));
+            element.setAttribute("style", "color: blue"); // có thể dùng để thêm thuộc tính mớ 
+        </script>
+
+        <h2>3. DOM CSS</h2>
+        <div class="vidu-3" id="vidu-3">Nội dung</div>
+        <style>
+            .vidu-3 {
+                background-color: aqua;
+                width: 200px;
+                text-align: center;
+                padding: 1%;
+            }
+        </style>
+
+        <script>
+            var cssValue = document.getElementById("vidu-3"); 
+            cssValue.style.textAlign = 'left' //thay đổi giá trị của thuộc tính text-align
+            cssValue.style.color = '#bbbbbb'; //thay đổi giá trị của thuộc tính color
+        </script>
+
+    </body>
+</html>
