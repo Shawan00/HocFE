@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript cơ bản buổi 6</title>
+</head>
+<body>
+    <h1>DOM phần 2</h1>
+
+    <h2>1. DOM Event</h2>
+    <!-- Onload -->
+    <script>
+        window.onload = function() { //load trang web xong mới thực hiện lệnh
+            var menu = document.getElementById("menu");
+            console.log(menu)
+        };
+    </script>
+    <ul id="menu">
+        <li>Mục 1</li>
+        <li>Mục 2</li>
+        <li>Mục 3</li>
+    </ul>
+
+    <!-- Onblur và on focus -->
+    <input type="text" id="inputName" placeholder="Nhập nội dung">
+    <script>
+        var inp = document.getElementById("inputName");
+        inp.onblur = function() { // thực hiện lệnh khi không click vào đối tượng
+            console.log(inp.value);
+        };
+
+        inp.onfocus = function() { //thực hiện lệnh khi click vào đối tượng
+            console.log(inp.value.toUpperCase());
+        }
+
+    </script>
+
+    <h2>2. DOM Even Listener</h2>
+    <button id="btn">Button</button>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function() {
+            console.log("Việc 1");
+        });
+        btn.addEventListener("click", function() {
+            console.log("Việc 2");
+        });
+        // kết quả in ra việc 1 và việc 2
+    </script>
+
+    <h2>3. DOM Navigation</h2>
+    <div class="grand-parent">
+        <div class="parent-1">
+            <div class="child-1"></div>
+            <div class="child-2"></div>
+            <div class="child-3"></div>
+        </div>
+        <div class="parent-2"></div>
+    </div>
+
+    <script>
+        var parent1 = document.querySelector(".parent-1");
+        console.log(parent1);
+        console.log(parent1.parentNode); // in ra thẻ cha của parent1
+        console.log(parent1.childNodes); // in ra tất cả thẻ con của thẻ cha của parent1
+        console.log(parent1.firstElementChild); //in ra child1
+    </script>
+
+    <h2>4. DOM Node</h2>
+    <div id="node"></div>
+    <ul id="list">
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+    </ul>
+    <script>
+        var div = document.createElement("div"); //tạo ra một thẻ div
+        div.innerHTML = "Nội dung,,,";
+        var txt = document.createTextNode("Nội dung quảng cáo"); //tạo một đoạn text
+        div.appendChild(txt); // thêm đoạn text vào vị trí cuối cùng của thẻ div
+
+        var node = document.getElementById('node');
+        node.appendChild(div); //thêm thẻ div vửa tạo làm thẻ con của #node
+        node.appendChild(div);
+        console.log(node);
+
+        var list = document.getElementById("list");
+        var li = list.querySelectorAll("li");
+        li.forEach(item => {
+            item.onclick = function() { // tạo sự kiện xoá thẻ li khi click vào
+                list.removeChild(item);
+            }
+        });
+
+        var tmp = document.createElement("li");
+        tmp.innerHTML = "Nội dung thay thế"
+
+        li.forEach(item => {
+            item.onclick = function() { // tạo sự kiện xoá thẻ li khi click vào
+                list.replaceChild(tmp, item); // thay thế thẻ li được click thành tmp
+            }
+        })
+    </script>
+
+    
+</body>
+</html>
