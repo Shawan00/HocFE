@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Nâng cao</title>
+</head>
+<body>
+    <h1>JavaScript Nâng cao</h1>
+
+    <h2>1. Scope</h2>
+    <script>
+        var a = 10; // biến toàn cục
+        func();
+        function func() {
+            console.log(a);
+            var b = 12; // biến cục bộ chỉ sử dụng được trong phạm vi hàm này
+            console.log(b);
+        }
+    </script>
+
+    <h2>2. Hoisting</h2>
+    <p>Có thể sử dụng một biến trước rồi mới khai báo biến đó mà không bị lỗi</p>
+    <script>
+        console.log(value);
+        var value = "hoisting";
+    </script>
+
+    <h2>3. Strict Mode</h2>
+    <p>Là chế độ code nghiêm ngặt</p>
+    <script>
+        "use strict";
+        us = 10; 
+        console.log(us); // chương trình báo lỗi chưa khai báo biến us
+    </script>
+
+    <h2>4. Từ khoá this</h2>
+    <p id="p-4">Trỏ vào đối tượng mà nó đang thuộc về</p>
+    <script>
+        var element = document.getElementById("p-4");
+        element.addEventListener("click", function() {
+            console.log(this); // in ra thẻ p
+        });
+
+    </script>
+
+    <h2>5. Module</h2>
+    <script type="module">
+        import {sum, pi} from "./Module.js"
+        console.log(sum(10, 12, 13, pi));
+
+        import {hieu as minus} from "./Module.js" // có thể đổi tên hàm khi import để tránh trùng tên
+        console.log(minus(12, 20));
+    </script>
+</body>
+</html>
