@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript nâng cao P2</title>
+</head>
+<body>
+    
+    <h2>6. JSON</h2>
+    <script>
+        //dạng object
+        let infoUser = {
+            name: "An Quoc Viet",
+            email: "anviet0901@gmail.com",
+            age: 22
+        };
+
+        //JOSN dạng string
+        let infoUserJSON = `
+        {
+            "name": "An Quoc Viet",
+            "email": "anviet0901@gmail.com",
+            "age": 22
+        }`;
+        console.log(infoUserJSON);
+
+        //chuyển tử JSON sang JS
+        infoUserJSONtoJS = JSON.parse(infoUserJSON);
+        console.log(infoUserJSONtoJS);
+
+        //chuyển tử JS sang JSON
+        infoUserJStoJSON = JSON.stringify(infoUser);
+        console.log(infoUserJStoJSON);
+    </script>
+
+    <h2>7. Callbacks</h2>
+    <script>
+        function checkSoDuong(a) {
+            if (a > 0) {
+                console.log("Số dương");
+            }
+            else {
+                console.log("Số âm");
+            }
+        }
+
+        function checkChanLe(a) {
+            if (a % 2 == 0) {
+                console.log("Số chẵn");
+            }
+            else {
+                console.log("Số lẻ");
+            }
+        }
+
+        function tong(a, b, callback) {
+            let kq = a + b;
+            console.log(kq);
+            callback(kq);
+        } 
+        tong(12, 20, checkChanLe);
+        tong(11, -12, checkSoDuong);
+    </script>
+
+    <h2>8. Promise</h2>
+    <script>
+        var a = "1234";
+        var promise = new Promise((resolve, reject) => {
+            if (a !== undefined && a !== null && a !== "") {
+                resolve(a);
+            }
+            else {
+                reject(a);
+            }
+        });
+        promise
+            .then((success) => {
+                console.log(success);
+                return success;
+            })
+            .then((success2) => {
+                b = 20;
+                console.log(success2 + b);
+                return success2 + b;
+            })
+            .catch((error) => {
+                console.log("Lỗi: ", error);
+            })
+            .finally(() => {
+                console.log("Luôn vào đây");
+            });
+    </script>
+
+    <h2>9. Fetch API</h2>
+    <div id="categories"></div>
+
+    <script>
+        fetch("https://dummyjson.com/products/categories")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            var categories = document.getElementById("categories");
+            var htmls = "";
+            data.forEach(item => {
+                htmls += `<div class="item">${item.name}</div>`;
+            });
+            categories.innerHTML = htmls;
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    </script>
+    
+</body>
+</html>
