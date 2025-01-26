@@ -1,0 +1,106 @@
+// placeholder
+%button {
+    color: white;
+    padding: 10px 30px;
+    font-size: 25px;
+    border-radius: 8px;
+}
+
+.button__red {
+    @extend %button; //kế thừa các thuộc tính của %button
+    background-color: red;
+}
+
+.button__green {
+    @extend %button; // kế thừa
+    background-color: green;
+}
+
+//khai báo biến
+$color-red: #c30000;
+$color-white: #fff;
+
+.button__green {
+    color: $color-red;
+}
+
+//nesting: phân cấp
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+  
+      .card__title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  
+    &__body {
+      margin-bottom: 16px;
+  
+      .card__text {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+      }
+    }
+  
+    &__button {
+      font-size: 14px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &--primary {
+        background-color: #007bff;
+        color: #fff;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+}
+
+// mixin và include: khai báo và kế thừa kế hợp đối số
+@mixin flexbox { // display: flex tương thích mọi trình duyệt
+    display: -webkit-box;     // Hỗ trợ trình duyệt cũ (Safari, iOS)
+    display: -ms-flexbox;     // Hỗ trợ IE10, IE11
+    display: flex;            // Hỗ trợ các trình duyệt hiện đại
+}
+
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: darken($bg-color, 10%);
+    }
+}
+
+.button-1 {
+    @include button-style(#007bff, #fff)
+}
+
+.button-2 {
+    @include button-style(#6c757d, #fff);
+}
