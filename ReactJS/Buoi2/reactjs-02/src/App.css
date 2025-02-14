@@ -1,0 +1,21 @@
+.box {
+  background-color: #ddd;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main > *  {
+  box-sizing: border-box;
+  width: calc(100% / 3 - 10px);
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
