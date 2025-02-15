@@ -1,19 +1,19 @@
 # Nội dung học ReactJS
 
 ## Buổi 1:
-### Cài đặt prj ReactJS
-### Ôn tập JS
+1. Cài đặt prj ReactJS
+2. Ôn tập JS
 
 ## Buổi 2:
-### JSX
-### Components
-### Props
-### React-icon
-### Event
+1. JSX
+2. Components
+3. Props
+4. React-icon
+5. Event
 
 ## Buổi 3:
-### Conditional rendering
-### List
-### CSS/SCSS trong ReactJS
-### Hooks
-#### UseState
+1. Conditional rendering
+2. List
+3. CSS/SCSS trong ReactJS
+4. Hooks
+  4.1 UseState
