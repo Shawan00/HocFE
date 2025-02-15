@@ -16,4 +16,4 @@
 2. List
 3. CSS/SCSS trong ReactJS
 4. Hooks
-  4.1 UseState
+  4.1. UseState
