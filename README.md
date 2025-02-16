@@ -15,5 +15,8 @@
 1. Conditional rendering
 2. List
 3. CSS/SCSS trong ReactJS
-4. Hooks
-  4.1. UseState
+4. UseState
+
+## Buổi 4:
+1. UseEffect: call API & pagination
+2. UseContext
