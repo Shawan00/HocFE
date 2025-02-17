@@ -20,3 +20,9 @@
 ## Buổi 4:
 1. UseEffect: call API & pagination
 2. UseContext
+
+## Buổi 5
+1. UseRef
+2. React.memo
+3. UseCallback
+4. UseMemo
