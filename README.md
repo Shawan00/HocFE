@@ -26,3 +26,7 @@
 2. React.memo
 3. UseCallback
 4. UseMemo
+
+## Buổi 6
+1. UseReducer
+2. Skeleton
