@@ -1,0 +1,148 @@
+input, textarea, select:focus-visible {
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
+.info, .button {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.product__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-items: stretch;
+  margin: 50px 0;
+}
+
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product__image {
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #eee;
+}
+
+.product__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 4/3;
+}
+
+.product__title {
+  height: 53px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #777;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.product__price {
+  display: flex;
+  gap: 15%;
+  margin: 15px 0;
+}
+
+.product__price del {
+  color: #777;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-product-btn {
+  font-size: 16px;
+  color: white;
+  background-color: #5caf90;
+  transition: all 0.3s ease;
+  
+}
+
+.create-product-btn:hover {
+  background-color: #777;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-product {
+  background-color: bisque;
+}
+
+.delete-product {
+  background-color: rgb(255, 110, 110);
+}
+
+.ReactModal__Content {
+  width: 800px;
+  margin: 0 auto;
+  padding: 40px !important;
+  background-color: #dce8eb !important;
+}
+
+.ReactModal__Content h3 {
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.ReactModal__Content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ReactModal__Content form label{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ReactModal__Content form label input, select, textarea {
+  padding: 7px 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.ReactModal__Content .inner-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ReactModal__Content .inner-button > *:last-child {
+  background-color: #f7d9c4;
+  font-size: 16px;
+  font-weight: 600; 
+  padding: 15px 25px;
+  border-radius: 8px;
+}

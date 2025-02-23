@@ -30,3 +30,6 @@
 ## Buổi 6
 1. UseReducer
 2. Skeleton
+
+## Buổi 7
+Bài tập thêm sửa xoá sản phẩm sử dụng hooks, json server
